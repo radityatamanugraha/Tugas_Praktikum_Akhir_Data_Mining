@@ -6,9 +6,13 @@
 |**Faris Fadhil Shafwanda**|**312310295**|**I.23.1D**|**Praktikum Data Mining**|
 |**Romi Rahman**|**312310581**|**I.23.1D**|**Praktikum Data Mining**|
 
+---
+
 ## Soal Projek Akhir Praktikum :
 
 ![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss4-latihan-soal-akhir-praktikum.png)
+
+---
 
 ##  • Pembuatan Dataset Simulasi UMKM
 ```python
@@ -44,6 +48,9 @@ df.to_csv('dataset_pinjaman_umkm.csv', index=False)
 print("Sukses! File 'dataset_pinjaman_umkm.csv' berhasil dibuat di folder Colab.")
 df.head()
 ```
+
+---
+
 ### Penjelasan :
 ```
 - Simulasi Data (np.random): Membuat 1.000 data acak profil UMKM sebagai bahan dasar pelatihan model AI.
@@ -51,6 +58,8 @@ df.head()
 - Aturan Kelayakan (Looping If-Else): Menentukan label target (1 = Layak, 0 = Ditolak) berdasarkan logika skor kredit bersih atau omset kuat yang didukung jaminan fisik.
 - Output (.to_csv): Menyimpan seluruh data hasil pelabelan ke dalam file dataset_pinjaman_umkm.csv untuk dipakai di tahap training.
 ```
+
+---
 
 ##  • Pelatihan dan Penyimpanan Model Decision Tree
 ```python
@@ -75,6 +84,9 @@ with open('model_pinjaman_umkm.pkl', 'wb') as file:
     pickle.dump(model_umkm, file)
 print("File 'model_pinjaman_umkm.pkl' berhasil disimpan dan siap dipakai di Streamlit!")
 ```
+
+---
+
 ### Penjelasan :
 ```
 - Pemisahan Variabel (X dan y): Membagi data menjadi fitur input X (kondisi keuangan) dan target output y (label kelayakan pinjaman).
@@ -84,17 +96,24 @@ print("File 'model_pinjaman_umkm.pkl' berhasil disimpan dan siap dipakai di Stre
 - Penyimpanan Ekspor (pickle): Menyimpan model AI yang sudah pintar ke dalam file biner model_pinjaman_umkm.pkl agar bisa dipanggil langsung oleh web Streamlit.
 ```
 
+---
+
 ##  • Instalasi Environment dan Dependencies
 ```python
 !pip install -q streamlit
 
 !npm install -g localtunnel
 ```
+
+---
+
 ### Penjelasan :
 ```
 - Instalasi Framework (!pip install): Memasang pustaka Streamlit di komputer virtual Google Colab untuk membangun antarmuka web aplikasi.
 - Pemasangan Terowongan (!npm install): Memasang alat Localtunnel untuk menjembatani dan membuka akses server lokal Google Colab agar bisa dibuka melalui browser laptop pribadi.
 ```
+
+---
 
 ##  • Pembuatan Script Aplikasi Web Streamlit (app.py)
 ```python
@@ -154,6 +173,9 @@ except FileNotFoundError:
 except Exception as e:
     st.error(f"Terjadi kesalahan sistem: {str(e)}")
 ```
+
+---
+
 ### Penjelasan :
 ```
 - Pembuatan Berkas (%%writefile app.py): Perintah khusus Colab untuk mengekspor seluruh blok kode di bawahnya menjadi sebuah file skrip Python bernama
@@ -163,6 +185,8 @@ except Exception as e:
 - Output Keputusan Dinamis: Menampilkan rekomendasi visual berupa kotak hijau (LAYAK) disertai efek balon animasi jika disetujui, atau kotak merah (BELUM LAYAK) lengkap dengan tips perbaikan finansial jika ditolak.
 ```
 
+---
+
 ##  • Eksekusi dan Aktivasi Server Web
 ```python
 import urllib
@@ -170,6 +194,9 @@ print("Password Terowongan Anda:", urllib.request.urlopen('https://ipv4.icanhazi
 
 !streamlit run app.py & npx localtunnel --port 8501
 ```
+
+---
+
 ### Penjelasan :
 ```
 - Pengambilan IP Publik (urllib): Mengambil alamat IP publik dari server virtual Google Colab untuk digunakan sebagai password keamanan (Endpoint Password) saat membuka Localtunnel.
@@ -177,29 +204,43 @@ print("Password Terowongan Anda:", urllib.request.urlopen('https://ipv4.icanhazi
 - Membuka Akses Publik (npx localtunnel): Menghubungkan port 8501 ke internet melalui layanan Localtunnel, sehingga menghasilkan link URL eksternal khusus yang bisa diklik untuk membuka web tersebut dari browser laptop.
 ```
 
+---
+
 ##  • Tampilan Awal Web Streamlit
 
 ![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss1-aplikasi-berbasis-web-menggunakan-Streamlit.png)
+
+---
 
 ### Penjelasan :
 ```
 - Gambar di atas menampilkan bagian header (halaman utama) aplikasi web Streamlit. 
 ```
 
+---
+
 ##  • Form Input Data Usaha
 
 ![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss2-aplikasi-berbasis-web-menggunakan-Streamlit.png)
+
+---
 
 ### Penjelasan :
 ```
 - Gambar di atas menampilkan formulir input interaktif pada aplikasi web. Bagian ini berfungsi sebagai wadah bagi pengguna untuk memasukan data profil keuangan dan operasional UMKM (omset, jumlah pinjaman, lama usaha, skor kredit, rasio utang, dan jaminan) sebelum diproses oleh model AI.
 ```
 
+---
+
 ##  • Output Prediksi Hasil Analisis Model AI
 
 ![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss3-aplikasi-berbasis-web-menggunakan-Streamlit.png)
+
+---
 
 ### Penjelasan :
 ```
 - Gambar di atas menampilkan komponen output atau hasil keputusan akhir dari aplikasi web Streamlit. Sistem berhasil menampilkan rekomendasi status kelayakan pinjaman berwarna hijau secara dinamis berdasarkan kalkulasi prediksi cerdas dari model kecerdasan buatan.
 ```
+
+---
