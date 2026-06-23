@@ -6,6 +6,10 @@
 |**Faris Fadhil Shafwanda**|**312310295**|**I.23.1D**|**Praktikum Data Mining**|
 |**Romi Rahman**|**312310581**|**I.23.1D**|**Praktikum Data Mining**|
 
+## Soal Projek Akhir Praktikum :
+
+![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss4-latihan-soal-akhir-praktikum.png)
+
 ##  • Pembuatan Dataset Simulasi UMKM
 ```python
 import pandas as pd
@@ -171,4 +175,31 @@ print("Password Terowongan Anda:", urllib.request.urlopen('https://ipv4.icanhazi
 - Pengambilan IP Publik (urllib): Mengambil alamat IP publik dari server virtual Google Colab untuk digunakan sebagai password keamanan (Endpoint Password) saat membuka Localtunnel.
 - Menjalankan Streamlit (streamlit run): Mengaktifkan server lokal aplikasi web app.py di dalam latar belakang sistem menggunakan port default 8501.
 - Membuka Akses Publik (npx localtunnel): Menghubungkan port 8501 ke internet melalui layanan Localtunnel, sehingga menghasilkan link URL eksternal khusus yang bisa diklik untuk membuka web tersebut dari browser laptop.
+```
+
+##  • Tampilan Awal Web Streamlit
+
+![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss1-aplikasi-berbasis-web-menggunakan-Streamlit.png)
+
+### Penjelasan :
+```
+- Gambar di atas menampilkan bagian header (halaman utama) aplikasi web Streamlit. 
+```
+
+##  • Form Input Data Usaha
+
+![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss2-aplikasi-berbasis-web-menggunakan-Streamlit.png)
+
+### Penjelasan :
+```
+- Gambar di atas menampilkan formulir input interaktif pada aplikasi web. Bagian ini berfungsi sebagai wadah bagi pengguna untuk memasukan data profil keuangan dan operasional UMKM (omset, jumlah pinjaman, lama usaha, skor kredit, rasio utang, dan jaminan) sebelum diproses oleh model AI.
+```
+
+##  • Output Prediksi Hasil Analisis Model AI
+
+![gambar](Tugas_Praktikum_Akhir_Data_Mining/ss3-aplikasi-berbasis-web-menggunakan-Streamlit.png)
+
+### Penjelasan :
+```
+- Gambar di atas menampilkan komponen output atau hasil keputusan akhir dari aplikasi web Streamlit. Sistem berhasil menampilkan rekomendasi status kelayakan pinjaman berwarna hijau secara dinamis berdasarkan kalkulasi prediksi cerdas dari model kecerdasan buatan.
 ```
